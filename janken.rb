@@ -14,6 +14,7 @@ def janken
   if @your_hand == @enemy_hand
     puts "あいこです"
     return true
+
   elsif (@your_hand == 0 && @enemy_hand == 2) || 
     (@your_hand == 1 && @enemy_hand == 0) ||
     (@your_hand == 2 && @enemy_hand == 1)
@@ -25,6 +26,7 @@ def janken
   elsif @your_hand >= 3
     puts "そんな選択肢はありません、選び直してください"
     return true
+    
   else
     puts "あなたの勝ちです"
     # hoi

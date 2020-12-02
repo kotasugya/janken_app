@@ -1,4 +1,5 @@
 #じゃんけん
+
 def janken
   puts "じゃんけん..."
   jankens = ["グー", "チョキ", "パー"]
@@ -40,36 +41,36 @@ while next_game do
   next_game = janken
 end
 
-------------------------------
-#あっち向いてホイ
-def hoi
-  hois = ["上", "下", "左", "右"]
-  puts "あっち向いて"
-  puts "0(上) 1(下) 2(左) 3(右)"
-  @your_dir = gets.to_i
-  @enemy_dir = rand(4)
-  puts "-----------------"
-  puts "ホイ"
-  puts "あなた: #{hois[@your_dir]}"
-  puts "相手: #{hois[@enemy_dir]}"
-  puts "-----------------"
-end
+#------------------------------
+# #あっち向いてホイ
+# def hoi
+#   hois = ["上", "下", "左", "右"]
+#   puts "あっち向いて"
+#   puts "0(上) 1(下) 2(左) 3(右)"
+#   @your_dir = gets.to_i
+#   @enemy_dir = rand(4)
+#   puts "-----------------"
+#   puts "ホイ"
+#   puts "あなた: #{hois[@your_dir]}"
+#   puts "相手: #{hois[@enemy_dir]}"
+#   puts "-----------------"
+# end
 
-#あっち向いてホイの判定
-def hoi_win
-  if @your_dir == @enemy_dir
-    puts "あなたの勝ちです"
-  else#それ以外はじゃんけんに戻す
-    janken
-  end
-end
+# #あっち向いてホイの判定
+# def hoi_win
+#   if @your_dir == @enemy_dir
+#     puts "あなたの勝ちです"
+#   else#それ以外はじゃんけんに戻す
+#     janken
+#   end
+# end
 
-def hoi_loss
-  if @enemy_dir == @your_dir
-    puts "あなたの負けです"
-  else　#それ以外はじゃんけんに戻す
-    janken
-  end
-end
+# def hoi_loss
+#   if @enemy_dir == @your_dir
+#     puts "あなたの負けです"
+#   else　#それ以外はじゃんけんに戻す
+#     janken
+#   end
+# end
 
 

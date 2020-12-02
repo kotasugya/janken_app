@@ -26,7 +26,7 @@ def janken
   elsif @your_hand >= 3
     puts "そんな選択肢はありません、選び直してください"
     return true
-    
+
   else
     puts "あなたの勝ちです"
     # hoi

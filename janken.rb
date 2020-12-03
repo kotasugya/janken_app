@@ -32,8 +32,6 @@ def hoi_loss
   end
 end
 
-next_game = true
-
 #じゃんけん
 
 def janken
@@ -41,6 +39,10 @@ def janken
   jankens = ["グー", "チョキ", "パー"]
   puts "0(グー) 1(チョキ) 2(パー)"
   @your_hand = gets.to_i
+  if @your_hand >= 3
+    puts "そんな選択肢はありません、選び直してください"
+    return true
+  end
   @enemy_hand = rand(3)
   puts "-----------------"
   puts "あなたは#{jankens[@your_hand]}を出しました"
@@ -56,16 +58,10 @@ def janken
     (@your_hand == 2 && @enemy_hand == 1)
     hoi_loss
     
-  elsif @your_hand >= 3
-    puts "そんな選択肢はありません、選び直してください"
-    return true
-
   else
     hoi_win
   end
 end
-
-janken
 
 next_game = true
 

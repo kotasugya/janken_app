@@ -4,6 +4,10 @@ def hoi
   puts "あっち向いて"
   puts "0(上) 1(下) 2(左) 3(右)"
   @your_dir = gets.to_i
+  if @your_dir > 3
+    puts "そんな選択肢はありません、選び直してください"
+    return hoi
+  end
   @enemy_dir = rand(4)
   puts "-----------------"
   puts "ホイ"
@@ -27,12 +31,10 @@ def hoi_loss
   if @enemy_dir == @your_dir
     puts "あなたの負けです"
     return false
-  else　#それ以外はじゃんけんに戻す
+  elsif　@enemy_dir != @your_dir
     return true
   end
 end
-
-next_game = true
 
 #じゃんけん
 
@@ -41,6 +43,10 @@ def janken
   jankens = ["グー", "チョキ", "パー"]
   puts "0(グー) 1(チョキ) 2(パー)"
   @your_hand = gets.to_i
+  if @your_hand >= 3
+    puts "そんな選択肢はありません、選び直してください"
+    return true
+  end
   @enemy_hand = rand(3)
   puts "-----------------"
   puts "あなたは#{jankens[@your_hand]}を出しました"
@@ -56,16 +62,10 @@ def janken
     (@your_hand == 2 && @enemy_hand == 1)
     hoi_loss
     
-  elsif @your_hand >= 3
-    puts "そんな選択肢はありません、選び直してください"
-    return true
-
   else
     hoi_win
   end
 end
-
-janken
 
 next_game = true
 

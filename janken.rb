@@ -4,6 +4,10 @@ def hoi
   puts "あっち向いて"
   puts "0(上) 1(下) 2(左) 3(右)"
   @your_dir = gets.to_i
+  if @your_dir > 3
+    puts "そんな選択肢はありません、選び直してください"
+    return hoi
+  end
   @enemy_dir = rand(4)
   puts "-----------------"
   puts "ホイ"
@@ -27,7 +31,7 @@ def hoi_loss
   if @enemy_dir == @your_dir
     puts "あなたの負けです"
     return false
-  else　#それ以外はじゃんけんに戻す
+  elsif　@enemy_dir != @your_dir
     return true
   end
 end
